@@ -55,3 +55,6 @@ docs/_build/
 # Text editor
 *.sublime-workspace
 *.sublime-project
+
+# OS-specific
+*.DS_Store

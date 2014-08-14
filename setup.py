@@ -12,7 +12,7 @@ setup(
     author_email="tech@cfpb.gov",
 
     # Packages
-    packages=["app"],
+    packages=["flask_govdelivery"],
 
     # Include additional files into the package
     include_package_data=True,

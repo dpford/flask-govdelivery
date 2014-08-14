@@ -5,7 +5,7 @@ from govdelivery.api import GovDelivery
 ACCOUNT_CODE = os.environ.get('GOVDELIVERY_ACCOUNT_CODE')
 gd = GovDelivery(account_code=ACCOUNT_CODE)
 
-flask_govdelivery = Blueprint("flask-govdelivery", __name__, url_prefix="")
+govdelivery = Blueprint("flask-govdelivery", __name__, url_prefix="")
 
 
 def missing_parameter(parameter):
@@ -21,7 +21,7 @@ def extract_answers_from_request(request):
     return answers
 
 
-@flask_govdelivery.route("/new", methods=['POST'])
+@govdelivery.route("/new/", methods=['POST'])
 def new():
     for required_param in ['email','code']:
             if required_param not in request.form:
@@ -38,3 +38,7 @@ def new():
     for question_id, answer_text in answers:
             response = gd.set_subscriber_answers_to_question(email_address, question_id, answer_text)
     return Response("subscription successful!")
+
+@govdelivery.route("/form-test/", methods=['GET'])
+def form_test():
+    return Response("Worked!")
