@@ -21,6 +21,9 @@ The following environment variables need to be set:
 * GOVDELIVERY_ACCOUNT_CODE
 * GOVDELIVERY_USER
 * GOVDELIVERY_PASSWORD
+* SUBSCRIPTION_SUCCESS_URL (can be relative)
+
+The text inside any form input with a name starting with "questionid_" will be included in the subscription request.
 
 Depends on the govdelivery python wrapper being installed:
 https://github.com/rosskarchner/govdelivery
