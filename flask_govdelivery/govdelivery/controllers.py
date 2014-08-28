@@ -32,9 +32,9 @@ def new():
     try:
         subscription_response = gd.set_subscriber_topics(email_address, codes)
         if subscription_response.status_code != 200:
-            return fail_with_code_and_message(500, "subscription attempt failed")
+            return fail_with_code_and_message("subscription attempt failed")
     except Exception, e:
-        return fail_with_code_and_message(500, "subscription attempt failed")
+        return fail_with_code_and_message("subscription attempt failed")
     answers = extract_answers_from_request(request)
     for question_id, answer_text in answers:
             response = gd.set_subscriber_answers_to_question(email_address, question_id, answer_text)
