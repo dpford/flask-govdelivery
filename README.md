@@ -21,7 +21,11 @@ The following environment variables need to be set:
 * GOVDELIVERY_ACCOUNT_CODE
 * GOVDELIVERY_USER
 * GOVDELIVERY_PASSWORD
-* SUBSCRIPTION_SUCCESS_URL (can be relative)
+* SUBSCRIPTION_SUCCESS_URL
+* SUBSCRIPTION_USER_ERROR_URL
+* SUBSCRIPTION_SERVER_ERROR_URL
+
+(URLs can be relative)
 
 The text inside any form input with a name starting with "questionid_" will be included in the subscription request.
 
