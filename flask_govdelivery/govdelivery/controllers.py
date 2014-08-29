@@ -27,8 +27,8 @@ def extract_answers_from_request(request):
 @govdelivery.route("/subscriptions/new/", methods=['POST'])
 def new():
     for required_param in ['email','code']:
-            if required_param not in request.form:
-                return redirect(SUBSCRIPTION_USER_ERROR_URL)
+        if required_param not in request.form or not request.form[required_param]:
+            return redirect(SUBSCRIPTION_USER_ERROR_URL)
     email_address = request.form['email']
     codes = request.form.getlist('code')
     try:
